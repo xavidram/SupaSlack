@@ -30,10 +30,20 @@ const routes = [
     }
   },
   {
+    path: "/register",
+    name: "Register",
+    component: () => import("../views/Register.vue"),
+    beforeEnter(to, from, next) {
+      if (userStore.getters.isLoggedIn) next("/app");
+      else next();
+    }
+  },
+  {
     path: "/404",
     name: "NotFound",
     component: () => import("../views/NotFound.vue")
-  }, {
+  },
+  {
     path: "/app",
     name: "AppLayout",
     component: () => import("../views/AppLayout.vue"),

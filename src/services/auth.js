@@ -33,14 +33,15 @@ export const AuthService = {
   },
 
   async userExists(email) {
-    let { data, error } = await supabase
-      .from("users")
-      .select("user_id, name")
-      .eq("email", email);
-    return {
-      data,
-      error
-    };
+    try {
+      let { data } = await supabase
+        .from("users")
+        .select("id, name")
+        .eq("email", email);
+
+      return data !== null;
+      // eslint-disable-next-line no-empty
+    } catch (e) {}
   },
 
   async register(args) {

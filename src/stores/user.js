@@ -73,7 +73,7 @@ const actions = {
 
     // Check if the user trying to register already exists.
     var userExists = await AuthService.userExists(args.email);
-    if (userExists.data == null) {
+    if (userExists) {
       state.error = "User already exists with that email";
       state.isBusy = false;
       state.user = null;
@@ -83,6 +83,7 @@ const actions = {
     // Otherwise log user in.
     await AuthService.register(args)
       .then(response => {
+        console.log(response);
         if (response?.error) {
           state.error = response.error.message;
           state.isBusy = false;
@@ -90,8 +91,8 @@ const actions = {
           return response.data;
         }
 
-        if (response?.user) {
-          state.user = response.user;
+        if (response?.data) {
+          state.user = response.data;
           state.error = "";
           state.isBusy = false;
           router.push("/app");
