@@ -44,6 +44,19 @@ export const AuthService = {
     } catch (e) {}
   },
 
+  async saveRegisterDetails(uuid, details) {
+    try {
+      const { data, error } = await supabase
+        .from("users")
+        .update({
+          username: details.name
+        })
+        .match({ id: uuid });
+      return { data, error };
+      // eslint-disable-next-line no-empty
+    } catch (e) {}
+  },
+
   async register(args) {
     const { email, password } = args;
     return await supabase.auth.signUp({ email, password });

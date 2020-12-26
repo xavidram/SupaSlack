@@ -82,7 +82,7 @@ const actions = {
 
     // Otherwise log user in.
     await AuthService.register(args)
-      .then(response => {
+      .then(async response => {
         console.log(response);
         if (response?.error) {
           state.error = response.error.message;
@@ -92,6 +92,7 @@ const actions = {
         }
 
         if (response?.data) {
+          await AuthService.saveRegisterDetails(response.user.id, args);
           state.user = response.data;
           state.error = "";
           state.isBusy = false;
