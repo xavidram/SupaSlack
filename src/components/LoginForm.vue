@@ -30,7 +30,7 @@
           <error-span :property="model.password"></error-span>
         </label>
         <button
-          class="mt-4 bg-gray-700 w-full block text-white py-2 hover:bg-gray-800"
+          class="mt-4 bg-gray-700 w-full block text-white py-2 hover:bg-gray-800 text-sm"
           type="submit"
         >
           Sign In with Email

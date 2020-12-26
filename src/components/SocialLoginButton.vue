@@ -6,8 +6,8 @@
       type="button"
       @click="loginWithProvider('google')"
     >
-      <i class="bx bxl-google md:mr-4 lg:mr-4"></i>
-      <span class="hidden md:block lg:block">Sign in with Google</span>
+      <i class="bx bxl-google mr-2"></i>
+      <span class="block text-sm">Sign in with Google</span>
     </button>
     <button
       v-else-if="provider === 'github'"
@@ -15,8 +15,8 @@
       type="button"
       @click="loginWithProvider('github')"
     >
-      <i class="bx bxl-github md:mr-4 lg:mr-4"></i>
-      <span class="hidden md:block lg:block">Sign in with Github</span>
+      <i class="bx bxl-github mr-2"></i>
+      <span class="block text-sm">Sign in with Github</span>
     </button>
   </div>
 </template>
