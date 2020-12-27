@@ -9,6 +9,10 @@ const routes = [
     component: Home,
     meta: {
       requiresAuth: true
+    },
+    beforeEnter(to, from, next) {
+      if (userStore.getters.isLoggedIn) next("/app");
+      else next();
     }
   },
   {

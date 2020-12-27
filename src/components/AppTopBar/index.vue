@@ -1,18 +1,18 @@
 <template>
   <div
-    class="inline-flex items-center justify-between w-full bg-gray-800"
+    class="grid grid-cols-12 w-full bg-gray-800 px-2"
     style="height: 28px"
   >
     <!-- Left side -->
-    <div class="flex flex-1"></div>
+    <div class="flex col-span-3"></div>
     <!-- Center -->
-    <div class="inline-flex">
+    <div class="flex flex-grow justify-center items-center col-span-6">
       <topbar-history-icon></topbar-history-icon>
       <topbar-search></topbar-search>
       <topbar-faq-icon></topbar-faq-icon>
     </div>
     <!-- Right Side -->
-    <div class="flex">
+    <div class="flex justify-end items-center col-span-3">
       <profile-drop-menu></profile-drop-menu>
     </div>
   </div>
