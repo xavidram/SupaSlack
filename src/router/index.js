@@ -53,7 +53,10 @@ const routes = [
         name: "ContentView",
         component: () => import("../views/ContentView.vue")
       }
-    ]
+    ],
+    meta: {
+      requiresAuth: true
+    }
   }
 ];
 
