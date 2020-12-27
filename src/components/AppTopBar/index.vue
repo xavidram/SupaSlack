@@ -30,7 +30,7 @@ export default {
     ProfileDropMenu,
     TopbarFaqIcon,
     TopbarHistoryIcon,
-    TopbarSearch,
+    TopbarSearch
   },
   setup() {
     return {};

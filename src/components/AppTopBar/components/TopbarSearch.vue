@@ -9,6 +9,6 @@
 
 <script>
 export default {
-  name: "TopbarSearch",
+  name: "TopbarSearch"
 };
 </script>
